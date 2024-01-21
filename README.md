@@ -11,8 +11,8 @@ Feature :
   - Python pip
 
 **Configuration Command**
-- git clone https://github.com/brianandhikap/PinggTrace
-- cd PinggTrace
+- git clone https://github.com/brianandhikap/Ping-Traceroute-Bot-Telegram
+- cd Ping-Traceroute-Bot-Telegram
 - pip3 install -r requirements.txt
 
 **RUN Command **
