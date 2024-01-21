@@ -69,10 +69,6 @@ Fitur:
 /trace <ip> - Buat Traceroute
 /tracedns <ip> - Buat Traceroute pakai DNS kak
 /dns <ip> - Buat ngintip DNS
-/gpon <> Buat ngintip yang punya
-/pon <> Buat ngintip redaman
-/olt <> Buat nyari yang LOS
-/sn <sn> Buat nyari alamat dari SN kak
 
 Mohon maaf kalau salah kak, jangan di bully.
 '''
@@ -88,7 +84,7 @@ Mohon maaf kalau salah kak, jangan di bully.
 @dp.message_handler(commands=['ping'])
 async def ping(message: types.Message):
         ip = message.get_args()
-        logging.info(f'{message.from_id}Bentar ping {ip}')
+        logging.info(f'{message.from_user.id} Bentar lagi jalanin ping {ip}')
         if not ip:
                 await message.reply("Ping Pong gak tau IP itu.")
                 return
@@ -111,7 +107,7 @@ async def tcp(message: types.Message):
                 return
         ip = args[0]
         port = args[1]
-        logging.info(f'{message.from_id} TCP ping {ip} {port}')
+        logging.info(f'{message.from_user.id} Bentar lagi jalanin TCP ping {ip} {port}')
         waiting_message = await message.reply(f"TCP pinging to {ip}:{port} ...")
         result = tcp_ping(ip, port)
         await waiting_message.edit_text(f"TCP ping to {ip}:{port}:\n {result}")
@@ -120,7 +116,7 @@ async def tcp(message: types.Message):
 @dp.message_handler(commands=['trace'])
 async def trace(message: types.Message):
         ip = message.get_args()
-        logging.info(f'{message.from_id} trace {ip}')
+        logging.info(f'{message.from_user.id} Bentar lagi jalanin trace {ip}')
         if not ip:
                 await message.reply("Ping Pong gak tau IP itu.")
                 return
@@ -134,7 +130,7 @@ async def trace(message: types.Message):
 @dp.message_handler(commands=['tracedns'])
 async def tracedns(message: types.Message):
         ip = message.get_args()
-        logging.info(f'{message.from_id} trace {ip}')
+        logging.info(f'{message.from_user.id} Bentar lagi jalanin tracedns {ip}')
         if not ip:
                 await message.reply("Ping Pong gak tau IP itu.")
                 return
@@ -156,7 +152,7 @@ async def dns(message: types.Message):
         type = 'A'
         if len(args) > 1:
                 type = args[1]
-        logging.info(f'{message.from_id} DNS lookup {host} as {type}')
+        logging.info(f'{message.from_user.id} Bentar lagi jalanin DNS lookup {host} as {type}')
         waiting_message = await message.reply(f"DNS lookup {host} as {type} ...")
         try:
                 result = dns_lookup(host, type)
