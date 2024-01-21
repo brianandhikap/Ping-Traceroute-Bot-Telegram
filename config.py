@@ -1,3 +1,3 @@
-API_TOKEN = '6246778872:AAFOXtcB7Jxouyqt4mTzlqkdUGPeBrZIBZc'
+API_TOKEN = 'Token_Bot_Telegram'
 PROXY_URL = ''
 SHOW_PUBLIC_IP = True
