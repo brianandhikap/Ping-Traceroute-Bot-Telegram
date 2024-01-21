@@ -1,4 +1,4 @@
-aiogram
+aiogram==2.5
 aiohttp_socks
 requests
 tcping
