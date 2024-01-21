@@ -4,7 +4,3 @@ requests
 tcping
 python-dotenv
 scapy==2.4.4
-
-
-https://github.com/toricls/pingbot
-https://github.com/chitang233/PingBot
